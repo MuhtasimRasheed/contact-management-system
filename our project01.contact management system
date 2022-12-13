@@ -7,7 +7,7 @@
 
 
 bool isRunning = true;
-void Menu();
+void Menu();           //muhtasim
 void AddNewNumber();    //shohidul
 void ShowAllContacts();
 void SearchContact();
@@ -17,29 +17,34 @@ void DeleteAllContacts();    //shohidul
 void PrintLineWithSpace(char *Name[20],char ContactInfo);
 void ShowPhoneWithSpace(char *Phone[20]);
 void ShowEmailWithSpace(char *Email[30]);
-void ErrorAndRestart(char *error[100]);
+void ErrorAndRestart(char *error[100]);   //muhtasim
 bool AlreadyExists(char *GivenLine[30],char ContactInfo);
-void GoBackOrExit();
+void GoBackOrExit();    //muhtasim
 void Exit();
 
-int main(){
+int main()    //MUHTASIM
+{
     int i;
-    printf("\t\t");
-    char AppStarting[100] = "Application is Starting.....";
-    for(i=0;i<strlen(AppStarting);i++){
-        printf("%c",AppStarting[i]);
-        Sleep(40);
+    printf("\t\t\t\t");
+    system("COLOR F0");
+    char AppStart[100] = "Application is Starting....";
+    for(i=0;i<strlen(AppStart);i++)
+    {
+        printf("%c",AppStart[i]);
+        Sleep(45);
     }
     system("cls");
 
 
-    while(isRunning == true){
+    while(isRunning == true)
+        {
         Menu();
         char *str[100];
         char option;
         scanf("%s",&str);
         option = str[0];
-        switch(option){
+        switch(option)
+        {
             case '0':
                 Exit();
                 break;
@@ -61,12 +66,29 @@ int main(){
             case '6':
                 DeleteAllContacts();
                 break;
+            case '7':
+                system("cls");
+                break;
             default:
                 ErrorAndRestart("Option not found!");
                 break;
         }
     }
 
+    return 0;
+}
 
-return 0;
+void Menu()   //MUHTASIM
+{
+    printf("\n\t\t\t\t\t\tMAIN MENU\n");
+    printf("\t\t\t\t\t======================\n");
+    printf("\t\t\t\t\t 1. Add a new Contact\n\n");
+    printf("\t\t\t\t\t 2. Show all Contacts\n\n");
+    printf("\t\t\t\t\t 3. Search for contact\n\n");
+    printf("\t\t\t\t\t 4. Edit a Contact\n\n");
+    printf("\t\t\t\t\t 5. Delete a Contact\n\n");
+    printf("\t\t\t\t\t 6. Delete All Contact\n\n");
+    printf("\t\t\t\t\t 7. Clear Window\n\n");
+    printf("\t\t\t\t\t 0. Exit\n\t\t\t\t\t======================\n\t\t\t\t\t");
+    printf("Select an option:");
 }
